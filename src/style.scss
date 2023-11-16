@@ -1,0 +1,21 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    NavBar{
+        width: 100vw;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .info{
+            
+        }
+
+        .actions{
+
+        }
+    }
+}
