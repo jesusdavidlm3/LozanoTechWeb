@@ -1,8 +1,8 @@
 const NavBar = () => {
     return(
-        <div>
+        <div className='NavBar'>
             <div className="info">
-                <img src="../src/img/LozanoTechIsotipoWhite" className="logo"/>
+                <img src="../src/img/LozanoTechIsotipoWhite.png" className="logo"/>
                 <h3>Inicio</h3>
                 <h3>Sobre nosotros</h3>
                 <h3>Servicios</h3>

@@ -1,21 +1,52 @@
+body{
+    margin: 0;
+}
+
 .container{
     width: 100vw;
     height: 100vh;
     margin: 0;
 
-    NavBar{
-        width: 100vw;
+    .NavBar{
+        width: calc(100vw - 20px);
         height: 60px;
+        padding: 10px;
+        background-color: aqua;
+        // background-image: url(./img/Fondo\ De\ Colores_Mesa\ de\ trabajo\ 1.jpg);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
 
         .info{
-            
+            display: flex;
+            flex-direction: row;
+            color: white;
+            gap: 20px;
+
+            h3{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
 
         .actions{
+            display: flex;
+            flex-direction: row;
+            color: white;
+            gap: 10px;
 
+            button{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
+    }
+
+    .Page{
+        width: 100vw;
+        height: calc(100vh - 80px);
+        background-color: cadetblue;
     }
 }
