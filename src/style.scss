@@ -45,8 +45,9 @@ body{
     }
 
     .Page{
-        width: 100vw;
-        height: calc(100vh - 80px);
+        width: calc(100vw - 20px);
+        height: calc(100vh - 100px);
+        padding: 10px;
         background-color: cadetblue;
     }
 }
