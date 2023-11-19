@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className='container'>
-      <NavBar />
+      <NavBar onClickLogin={setLogin}/>
       <Page display={display}/>
     </div>
   )

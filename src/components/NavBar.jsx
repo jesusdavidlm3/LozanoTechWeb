@@ -12,7 +12,7 @@ const NavBar = ({onClickLogin, onClickreg, onClickCheck}) => {
             </div>
 
             <div className="actions">
-                <Button label='Iniciar sesion'></Button>
+                <Button onClick={onClickLogin} label='Iniciar sesion'></Button>
                 <Button label='registrarse'></Button>
                 <Button label='Consultar reparacion'></Button>
             </div>
