@@ -37,6 +37,7 @@ body{
             flex-direction: row;
             color: white;
             gap: 10px;
+            align-items: center;
 
             button{
                 &:hover{
@@ -50,6 +51,19 @@ body{
         width: calc(100vw - 20px);
         height: calc(100vh - 100px);
         padding: 10px;
-        background-color: cadetblue;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .registerForm{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &.submit{
+                flex-grow: 0;
+            }
+        }
     }
 }

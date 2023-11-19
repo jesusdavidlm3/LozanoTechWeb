@@ -1,14 +1,16 @@
+import { Button } from './Button/Button'
+import { TextField } from './TextField/TextField';
+
 const RegisterForm = () => {
     return(
         <>
-            <form>
-                <input type="text">Nombre</input>
-                <input type="email">Correo Electronico</input>
-                <input type="tel"> Telefono</input>
-                <input type="number">Identificacion</input>
-                <input type="password">Contraseña</input>
+            <form className='registerForm'>
+                <TextField label='Nombre' type='text'></TextField>
+                <TextField label='Correo electronico' type='email'></TextField>
+                <TextField label='Telefono' type='Telefono'></TextField>
+                <TextField label='Contraseña' type='password'></TextField>
 
-                <button type="submit">Registrarse</button>
+                <Button className='submit' label='Registrarse'></Button>
             </form>
         </>
     )

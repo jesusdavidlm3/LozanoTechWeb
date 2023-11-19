@@ -1,3 +1,5 @@
+import RegisterForm from './RegisterForm'
+
 const Page = ({display}) => {
     return(
         <div className="Page">
@@ -7,7 +9,7 @@ const Page = ({display}) => {
             }
 
             { display=='reg' && 
-                <p>estas en la pagina de registro</p>
+                <RegisterForm/>
             }
 
             { display=='log' && 
