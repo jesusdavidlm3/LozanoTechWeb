@@ -1,4 +1,6 @@
-const NavBar = () => {
+import { Button } from "./Button/Button";
+
+const NavBar = ({onClickLogin, onClickreg, onClickCheck}) => {
     return(
         <div className='NavBar'>
             <div className="info">
@@ -10,11 +12,10 @@ const NavBar = () => {
             </div>
 
             <div className="actions">
-                <button>consultar reparacion</button>
-                <button>Registrarse</button>
-                <button>Iniciar Sesion</button>
+                <Button label='Iniciar sesion'></Button>
+                <Button label='registrarse'></Button>
+                <Button label='Consultar reparacion'></Button>
             </div>
-
         </div>
     )
 }

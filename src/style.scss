@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .container{
@@ -11,8 +12,9 @@ body{
         width: calc(100vw - 20px);
         height: 60px;
         padding: 10px;
-        background-color: aqua;
-        // background-image: url(./img/Fondo\ De\ Colores_Mesa\ de\ trabajo\ 1.jpg);
+        // background-color: aqua;
+        background-image: url(./img/BackGround.jpg);
+        background-size: cover;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
