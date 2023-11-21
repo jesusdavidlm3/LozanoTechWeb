@@ -55,15 +55,47 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: scroll;
 
-        .registerForm{
+        .Form{
             display: flex;
             flex-direction: column;
             gap: 10px;
 
-            &.submit{
-                flex-grow: 0;
+            .submit{
+                margin-top: 5px;
+            }
+
+            & h1{
+                color: black;
+                margin: 0;
             }
         }
+
+        .mainCheckContainer{
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
+            justify-content: center;
+            align-items: center;
+
+            .checkContainer1{
+                width: 50vw;
+                height: 100vh;
+                background-color: brown;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .checkContainer2{
+                width: 50vw;
+                height: 100vh;
+                background-color: cadetblue;
+            }
+        }
+
     }
 }

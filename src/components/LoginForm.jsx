@@ -1,11 +1,15 @@
+import { Button } from "./Button/Button";
+import { TextField } from "./TextField/TextField";
+
 const LoginForm = () => {
     return(
         <>
-            <form>
-                <input type="number">Identificacion</input>
-                <input type="password">Contraseña</input>
+            <form className="Form">
+                <h1>Iniciar sesion</h1>
+                <TextField label='Identificacion' type="number"></TextField>
+                <TextField type="password" label='Contraseña'></TextField>
 
-                <button type="submit">Iniciar Sesion</button>
+                <Button type="submit" variant='allow' label='iniciar Sesion'></Button>
             </form>
         </>
     )

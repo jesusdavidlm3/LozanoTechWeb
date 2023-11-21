@@ -1,7 +1,7 @@
 import './ButtonStyle.scss'
 
-export const Button = ({label}) => {
+export const Button = ({label, variant}) => {
     return(
-        <button className='btn1'>{label}</button>
+        <button className={variant}>{label}</button>
     )
 }

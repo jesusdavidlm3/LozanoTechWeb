@@ -1,4 +1,6 @@
 import RegisterForm from './RegisterForm'
+import LoginForm from './LoginForm'
+import { CheckPage } from './CheckPage'
 
 const Page = ({display}) => {
     return(
@@ -13,11 +15,11 @@ const Page = ({display}) => {
             }
 
             { display=='log' && 
-                <p>estas en la pagina de inicio de sesion</p>
+                <LoginForm/>
             }
 
             { display=='check' && 
-                <p>estas en la pagina de consulta</p>
+                <CheckPage/>
             }
         </div>
     )
