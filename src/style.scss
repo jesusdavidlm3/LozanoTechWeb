@@ -55,7 +55,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: scroll;
+        overflow: hidden;
 
         .Form{
             display: flex;
@@ -73,6 +73,8 @@ body{
         }
 
         .mainCheckContainer{
+            background-image: url(https://www.cenedi.com/assets/Reparacio%CC%81n-de-Tele%CC%81fonos-Celulares.jpg);
+            background-size: cover;
             display: flex;
             flex-direction: row;
             width: 100vw;
@@ -80,20 +82,38 @@ body{
             margin: 0px;
             justify-content: center;
             align-items: center;
+            // overflow: hidden;
 
             .checkContainer1{
                 width: 50vw;
                 height: 100vh;
-                background-color: brown;
+                // background-color: brown;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                backdrop-filter: blur(10px);
             }
     
             .checkContainer2{
                 width: 50vw;
                 height: 100vh;
-                background-color: cadetblue;
+                // background-color: cadetblue;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                backdrop-filter: blur(10px);
+
+                .checkedInfo{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 25px;
+                    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+                    background-color: rgba(255, 255, 255, 0.7);
+                    padding: 20px;
+                    color: black;
+                }
             }
         }
 

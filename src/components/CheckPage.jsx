@@ -12,7 +12,10 @@ export const CheckPage = () => {
             </div>
 
             <div className="checkContainer2">
-
+                <div className="checkedInfo">
+                    <h3>Su equipo a reparar es: </h3>
+                    <h3>Su estado actual es:</h3>
+                </div>
             </div>
         </div>
         
