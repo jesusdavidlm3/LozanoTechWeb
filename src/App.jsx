@@ -5,7 +5,7 @@ import './style.scss'
 
 function App() {
 
-  const [display, setDisplay] = useState('check')
+  const [display, setDisplay] = useState('start')
 
   function setRegister(){
     setDisplay('reg')

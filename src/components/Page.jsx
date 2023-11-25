@@ -1,13 +1,14 @@
 import RegisterForm from './RegisterForm'
 import LoginForm from './LoginForm'
 import { CheckPage } from './CheckPage'
+import { StartPage } from './StartPage'
 
 const Page = ({display}) => {
     return(
         <div className="Page">
 
             { display=='start' && 
-                <p>estas en la pagina de inicio</p>
+                <StartPage/>
             }
 
             { display=='reg' && 
