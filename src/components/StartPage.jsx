@@ -9,9 +9,9 @@ export const StartPage = () => {
                 hogares, pequeñas empresas y estudiantes.
             </p>
 
-            <div className="infoContainer1">
-                <img src="./src/img/ref1.png"/>
-                <div>
+            <div className="StartInfoContainer">
+                <img className="roundImage" src="./src/img/ref1.png"/>
+                <div className="left">
                     <h1>Tu tiempo vale oro</h1>
                     <p>Nos enfocamos en ofrecerte toda la calidad de nuestro servicio
                         siempre en tiempo record ya que sabemos que necesitas tu equipo
@@ -19,6 +19,17 @@ export const StartPage = () => {
                         de el y estamos concientes de ello.
                     </p>
                 </div>
+            </div>
+
+            <div className="StartInfoContainer">
+                <div className="right">
+                    <h1>Todo a medida</h1>
+                    <p>Somos especialistas en realizas mejoras y ensamblajes
+                        de acuerdo a tus necesidades para que no gastes de mas
+                        ni otengas un bajo rendimiento.
+                    </p>
+                </div>
+                <img src="./src/img/ref2.png"/>
             </div>
         </div>
     )
