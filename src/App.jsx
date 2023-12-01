@@ -7,6 +7,10 @@ function App() {
 
   const [display, setDisplay] = useState('start')
 
+  function setStart(){
+    setDisplay('start')
+  }
+
   function setRegister(){
     setDisplay('reg')
   }
@@ -21,7 +25,12 @@ function App() {
 
   return (
     <div className='container'>
-      <NavBar onClickLogin={setLogin}/>
+      <NavBar
+        onClickLogin={setLogin}
+        onClickReg={setRegister}
+        onClickCheck={setCheck}
+        onClickStart={setStart}
+      />
       <Page display={display}/>
     </div>
   )

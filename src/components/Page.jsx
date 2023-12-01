@@ -6,7 +6,6 @@ import { StartPage } from './StartPage'
 const Page = ({display}) => {
     return(
         <div className="Page">
-
             { display=='start' && 
                 <StartPage/>
             }

@@ -24,7 +24,7 @@ export const StartPage = () => {
             <div className="StartInfoContainer">
                 <div className="right">
                     <h1>Todo a medida</h1>
-                    <p>Somos especialistas en realizas mejoras y ensamblajes
+                    <p>Somos especialistas en realizar mejoras y ensamblajes
                         de acuerdo a tus necesidades para que no gastes de mas
                         ni otengas un bajo rendimiento.
                     </p>
