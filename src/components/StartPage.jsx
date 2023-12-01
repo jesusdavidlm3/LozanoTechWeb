@@ -4,7 +4,7 @@ export const StartPage = () => {
             <img className="welcomeLogo" src="../src/img/LozanoTechIsotipoBlue.png"/>
             <h1>Hola!</h1>
             <p>
-                Somos una organizacion pequeña dedicada a llevar a cabo reparaciones
+                Somos un proyecto pequeño dedicado a llevar a cabo reparaciones
                 accesibles y de calidad en equipos de escritorio y laptops para
                 hogares, pequeñas empresas y estudiantes.
             </p>
