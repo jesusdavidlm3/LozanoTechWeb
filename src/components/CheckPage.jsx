@@ -1,20 +1,26 @@
 import { Button } from "./Button/Button"
 import { TextField } from "./TextField/TextField"
+import { db } from "../../firebase"
 
 export const CheckPage = () => {
 
-    const device = {
-        device: 'Lenovo Ideapad 3',
-        state: 'Reparacion exitosa, listo para retirar'
+    async function handleSubmit(){
+        try{
+            const device = await db.collection('repairStatus').document(controlNumber.value).get();
+        }catch{
+            console.log('parece que algo salio mal')
+        }
     }
+
+
 
     return(
         <div className="checkBackground">
             <div className="mainCheckContainer">
                 <div className="checkContainer1">
                     <form className="Form">
-                        <TextField label='Ingrese aqui su numero de control'></TextField>
-                        <Button variant='allow' label='Consultar'></Button>
+                        <TextField id='controlNumber' label='Ingrese aqui su numero de control'></TextField>
+                        <Button onClick={handleSubmit} variant='allow' label='Consultar'></Button>
                     </form>
                 </div>
 

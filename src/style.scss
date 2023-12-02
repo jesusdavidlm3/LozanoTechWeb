@@ -117,6 +117,14 @@ body{
                     p{
                         width: 50vw;
                         text-align: end;
+
+                        span{
+                            color: black;
+
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
                     }
                 }
 
