@@ -6,7 +6,7 @@ export const CheckPage = () => {
 
     async function handleSubmit(){
         try{
-            const device = await db.collection('repairStatus').document(controlNumber.value).get();
+            const device = await db.collection('repairStatus').document('1').get();
         }catch{
             console.log('parece que algo salio mal')
         }
