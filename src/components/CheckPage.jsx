@@ -6,17 +6,19 @@ import { db } from "../../firebase"
 
 export const CheckPage = () => {
 
-    const [device, setDevice] = useState('')
+    const [device, setDevice] = useState({ device: 'desconocido', state: 'desconocido' })
 
-    async function checkStatus(){
-        const docRef = doc(db, 'repairStatus', controlNumber.value);
-
-        if(docRef === undefined){
-            console.log('parece que hubo un error')
-        }else{
+    async function checkStatus() {
+        try{
+            const docRef = doc(db, 'repairStatus', controlNumber.value);
             const docSnap = await getDoc(docRef);
-            console.log(docSnap.data());
-            setDevice(docSnap.data())
+            setDevice(docSnap.data());
+        }catch(error){
+            const errorCode = error.code;
+        }
+
+        if(errorCode != null){
+            setDevice({device: 'error', state: 'error'})
         }
     }
 
