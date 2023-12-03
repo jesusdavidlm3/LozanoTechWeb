@@ -1,7 +1,7 @@
 import './TextFieldStyle.scss'
 
-export const TextField = ({label, type}) => {
+export const TextField = ({label, type, id}) => {
     return(
-        <input className="txtfld1" placeholder={label} type={type}></input>
+        <input className="txtfld1" id={id} placeholder={label} type={type}></input>
     )
 }
