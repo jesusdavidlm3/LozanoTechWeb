@@ -1,7 +1,9 @@
-import RegisterForm from './RegisterForm'
 import LoginForm from './LoginForm'
 import { CheckPage } from './CheckPage'
 import { StartPage } from './StartPage'
+import { Services } from './Services'
+import { Comments } from './Comments'
+import { AboutUs } from './AboutUs'
 
 const Page = ({display}) => {
     return(
@@ -10,16 +12,24 @@ const Page = ({display}) => {
                 <StartPage/>
             }
 
-            { display=='reg' && 
-                <RegisterForm/>
-            }
-
             { display=='log' && 
                 <LoginForm/>
             }
 
             { display=='check' && 
                 <CheckPage/>
+            }
+
+            { display=='services' && 
+                <Services/>
+            }
+
+            { display=='comments' && 
+                <Comments/>
+            }
+
+            { display=='aboutUs' && 
+                <AboutUs/>
             }
         </div>
     )

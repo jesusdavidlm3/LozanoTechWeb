@@ -23,6 +23,18 @@ function App() {
     setDisplay('check')
   }
 
+  function setServices(){
+    setDisplay('services')
+  }
+
+  function setAboutUs(){
+    setDisplay('aboutUs')
+  }
+
+  function setComments(){
+    setDisplay('comments')
+  }
+
   return (
     <div className='container'>
       <NavBar
@@ -30,6 +42,9 @@ function App() {
         onClickReg={setRegister}
         onClickCheck={setCheck}
         onClickStart={setStart}
+        onClickServices={setServices}
+        onClickAboutUs={setAboutUs}
+        onClickComments={setComments}
       />
       <Page display={display}/>
     </div>

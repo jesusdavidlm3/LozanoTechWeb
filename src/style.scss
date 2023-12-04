@@ -1,3 +1,8 @@
+// @mixin tablet{
+
+//     @media only screen and (orientation = portrait)
+// }
+
 body{
     margin: 0;
     font-family: 'Quicksand', sans-serif;
@@ -210,6 +215,74 @@ body{
             }
         }
 
+        .services{
+            width: calc(100vw - 50px);
+            height: 100vh;
+            margin-top: 200px;
+            margin-left: 50px;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+
+            h1{
+                text-align: center;
+                color: black;
+            }
+
+            p{
+                margin-top: 0px;
+                color: gray;
+                font-size: 30px;
+                font-weight: 600;
+                width: 70vw;
+                text-align: center;
+            }
+
+            .servicesContainer{
+                margin-top: 20px;
+                width: 85vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .individualService{
+                    width: 350px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img{
+                        width: 300px;
+                        border-radius: 30px;
+                        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
+                        transition: all ease .3s;
+
+                        &:hover{
+                            transform: scale(1.2);
+                            box-shadow: 0px 0px 10px 10px rgba(0, 230, 230, 0.7);
+                        }
+                    }
+                }
+            }
+        }
+
+        .aboutUs{
+
+            h1{
+                color: black;
+            }
+        }
+
+        .comments{
+
+            h1{
+                color: black;
+            }
+        }
     }
 }
 
