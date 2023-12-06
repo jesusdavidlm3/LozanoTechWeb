@@ -7,44 +7,15 @@ function App() {
 
   const [display, setDisplay] = useState('start')
 
-  function setStart(){
-    setDisplay('start')
-  }
-
-  function setRegister(){
-    setDisplay('reg')
-  }
-
-  function setLogin(){
-    setDisplay('log')
-  }
-
-  function setCheck(){
-    setDisplay('check')
-  }
-
-  function setServices(){
-    setDisplay('services')
-  }
-
-  function setAboutUs(){
-    setDisplay('aboutUs')
-  }
-
-  function setComments(){
-    setDisplay('comments')
-  }
-
   return (
     <div className='container'>
       <NavBar
-        onClickLogin={setLogin}
-        onClickReg={setRegister}
-        onClickCheck={setCheck}
-        onClickStart={setStart}
-        onClickServices={setServices}
-        onClickAboutUs={setAboutUs}
-        onClickComments={setComments}
+        onClickLogin={ () => setDisplay('log') }
+        onClickCheck={ () => setDisplay('check')}
+        onClickStart={ () => setDisplay('start')}
+        onClickServices={ () => setDisplay('services')}
+        onClickAboutUs={ () => setDisplay('aboutUs')}
+        onClickComments={ () => setDisplay('comments')}
       />
       <Page display={display}/>
     </div>
