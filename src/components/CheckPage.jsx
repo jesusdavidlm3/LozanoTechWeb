@@ -9,17 +9,9 @@ export const CheckPage = () => {
     const [device, setDevice] = useState({ device: 'desconocido', state: 'desconocido' })
 
     async function checkStatus() {
-        try{
-            const docRef = doc(db, 'repairStatus', controlNumber.value);
-            const docSnap = await getDoc(docRef);
-            setDevice(docSnap.data());
-        }catch(error){
-            const errorCode = error.code;
-        }
-
-        if(errorCode != null){
-            setDevice({device: 'error', state: 'error'})
-        }
+        const docRef = doc(db, 'repairStatus', controlNumber.value);
+        const docSnap = await getDoc(docRef);
+        setDevice(docSnap.data());
     }
 
 
@@ -36,10 +28,19 @@ export const CheckPage = () => {
 
                 <div className="checkContainer2">
                     <div className="checkedInfo">
-                        <h3>Su equipo a reparar es:</h3>
-                        <p>{device.device}</p>
-                        <h3>Su estado actual es:</h3>
-                        <p>{device.state}</p>
+                        { device ? (
+                            <>
+                                <h3>Su equipos a reparar es:</h3>
+                                <>{device.device}</>
+                                <h3>Su estado actual es:</h3>
+                                <>{device.state}</>
+                            </>
+                        ) : (
+                            <>
+                                <h1 className="errorMessage">Error</h1>
+                                <p className="errorMessage">Por favor intente con un numero de control diferente</p>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

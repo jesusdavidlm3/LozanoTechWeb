@@ -211,6 +211,11 @@ body{
                     p{
                         margin-top: 0;
                     }
+
+                    .errorMessage{
+                        font-weight: 900;
+                        color: red;
+                    }
                 }
             }
         }
