@@ -30,7 +30,7 @@ export const CheckPage = () => {
                     <div className="checkedInfo">
                         { device ? (
                             <>
-                                <h3>Su equipos a reparar es:</h3>
+                                <h3>Su equipo a reparar es:</h3>
                                 <>{device.device}</>
                                 <h3>Su estado actual es:</h3>
                                 <>{device.state}</>

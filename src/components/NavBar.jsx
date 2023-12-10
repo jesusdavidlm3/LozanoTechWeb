@@ -3,6 +3,7 @@ import { Button } from "./Button/Button";
 const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onClickAboutUs, onClickComments}) => {
     return(
         <div className='NavBar'>
+            <img className="burguerMenuIcon" src="../src/img/icons/menu.png"/>
             <div className="info">
                 <img src="../src/img/LozanoTechIsotipoWhite.png" className="logo"/>
                 <h3 onClick={onClickStart}>Inicio</h3>
@@ -12,7 +13,7 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
             </div>
 
             <div className="actions">
-                <Button onClick={onClickLogin} label='Acceso para tecnicos' variant='action'></Button>
+                <Button className='access' onClick={onClickLogin} label='Acceso para tecnicos' variant='action'></Button>
                 <Button onClick={onClickCheck} label='Consultar reparacion' variant='action'></Button>
             </div>
         </div>

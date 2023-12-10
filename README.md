@@ -9,3 +9,7 @@ Este es un proyecto personal para un emprendimiento el cual es una app web senci
 Este esta basado en Firebase para los servicios de base de datos y autenticacion de tecnicos para hacer cambios en esta. Este proyecto esta desarrollado en su totalidad con React.js y SASS para los estilos. Ninguna de las imagenes utilizadas a excepcion del logo de LozanoTech son de mi propia autoria.
 
 Para correr el proyecto es necesario contar con Node.js y NPM instalados y el editor de codigo de su preferencia, preferiblemente VS Code ya que fue desarrollado en este.
+
+-------Atributions - Atribuciones-------
+
+<a href="https://www.flaticon.es/iconos-gratis/menu" title="menú iconos">Menú iconos creados por Freepik - Flaticon</a>
