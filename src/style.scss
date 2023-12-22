@@ -36,9 +36,9 @@ body{
             @media(orientation: portrait){
                 display: block;
                 z-index: 15;
-                width: 75vw;
-                height: 100vh;
-                // background-color: red;
+                width: 185px;
+                height: 340px;
+                border-radius: 0px 0px 20px 0px;
                 background-image: url(img/BackGroundPortrait.jpg);
                 position: relative;
                 bottom: 10px;
@@ -318,7 +318,7 @@ body{
             }
     
             .checkContainer2{
-                width: 75vw;
+                width: 50vw;
                 height: 100vh;
                 // background-color: cadetblue;
                 display: flex;
@@ -419,7 +419,7 @@ body{
                     align-items: center;
 
                     @media(orientation: portrait){
-                        width: 165px;
+                        width: 100vw;
                     }
 
                     img{

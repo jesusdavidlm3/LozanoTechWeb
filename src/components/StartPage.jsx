@@ -1,7 +1,12 @@
+import isoTipoBlue from '/src/img/LozanoTechIsotipoBlue.png'
+import imgRef1 from '/src/img/ref1.png'
+import imgRef2 from '/src/img/ref2.png'
+import imgRef3 from '/src/img/ref3.jpg'
+
 export const StartPage = () => {
     return(
         <div className="startPage">
-            <img className="welcomeLogo" src="../src/img/LozanoTechIsotipoBlue.png"/>
+            <img className="welcomeLogo" src={isoTipoBlue}/>
             <h1>Hola!</h1>
             <p>
                 Somos un proyecto pequeño dedicado a llevar a cabo reparaciones
@@ -10,7 +15,7 @@ export const StartPage = () => {
             </p>
 
             <div className="StartInfoContainer">
-                <img className="roundImage" src="./src/img/ref1.png"/>
+                <img className="roundImage" src={imgRef1}/>
                 <div className="left">
                     <h1>Tu tiempo vale oro</h1>
                     <p>
@@ -31,11 +36,11 @@ export const StartPage = () => {
                         ni obtengas un bajo rendimiento.
                     </p>
                 </div>
-                <img src="./src/img/ref2.png"/>
+                <img src={imgRef2}/>
             </div>
 
             <div className="StartInfoContainer">
-                <img className="roundImage" src="./src/img/ref3.jpg"/>
+                <img className="roundImage" src={imgRef3}/>
                 <div className="left">
                     <h1>Mas que solo reparaciones</h1>
                     <p>
