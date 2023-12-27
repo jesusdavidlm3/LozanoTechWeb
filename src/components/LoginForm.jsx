@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Button } from "./Button/Button";
 import { TextField } from "./TextField/TextField";
+import { DatabaseChanger } from './DatabaseChanger'
 
 const LoginForm = () => {
 
@@ -9,11 +10,11 @@ const LoginForm = () => {
     return(
         <>
             {signed ? (
-                <h1>hola</h1>
+                <DatabaseChanger/>
             ):(
             <form className="Form">
                 <h1>Iniciar sesion</h1>
-                <TextField label='Identificacion' type="number"></TextField>
+                <TextField label='Correo' type="email"></TextField>
                 <TextField type="password" label='Contraseña'></TextField>
 
                 <Button type="submit" variant='allow' label='iniciar Sesion'></Button>

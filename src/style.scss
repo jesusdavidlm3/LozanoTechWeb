@@ -284,6 +284,31 @@ body{
             }
         }
 
+        .DatabaseChanger{
+            display: flex;
+            flex-direction: column;
+
+            .DatabaseChangerBanner{
+                width: 95vw;
+                height: 10vh;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                background-color: tomato;
+
+                #searcher{
+                    width: 80vw;
+                }
+            }
+
+            .SearchResults{
+                background-color: cadetblue;
+                width: 95vw;
+                height: 75vh;
+            }
+        }
+
         .mainCheckContainer{
             backdrop-filter: blur(10px);
             display: flex;
