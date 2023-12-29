@@ -1,21 +1,36 @@
 import { useState } from 'react'
 import { Button } from "./Button/Button";
 import { TextField } from "./TextField/TextField";
-import { DatabaseChanger } from './DatabaseChanger'
+import { DatabaseChanger } from './DatabaseChanger';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Auth } from '../../firebase';
+
 
 const LoginForm = () => {
 
-    const LoginInfo = {
-        email: email.value,
-        password: password.value,
+    const [singed, setSinged] = useState(false)
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        const userEmail = e.target[0].value;
+        const userPassword = e.target[1].value;
+
+        signInWithEmailAndPassword(Auth, userEmail, userPassword)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user)
+            if(user != null){
+                setSinged(true)
+            }
+        })
     }
 
     return(
         <>
-            {signed ? (
+            {singed ? (
                 <DatabaseChanger/>
             ):(
-            <form className="Form">
+            <form onSubmit={handleSubmit} className="Form">
                 <h1>Iniciar sesion</h1>
                 <TextField id='email' label='Correo' type="email"></TextField>
                 <TextField id='password' type="password" label='Contraseña'></TextField>
