@@ -5,7 +5,10 @@ import { DatabaseChanger } from './DatabaseChanger'
 
 const LoginForm = () => {
 
-    const [signed, setSigned]=useState(false)
+    const LoginInfo = {
+        email: email.value,
+        password: password.value,
+    }
 
     return(
         <>
@@ -14,8 +17,8 @@ const LoginForm = () => {
             ):(
             <form className="Form">
                 <h1>Iniciar sesion</h1>
-                <TextField label='Correo' type="email"></TextField>
-                <TextField type="password" label='Contraseña'></TextField>
+                <TextField id='email' label='Correo' type="email"></TextField>
+                <TextField id='password' type="password" label='Contraseña'></TextField>
 
                 <Button type="submit" variant='allow' label='iniciar Sesion'></Button>
             </form>)}
