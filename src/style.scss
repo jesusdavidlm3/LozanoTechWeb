@@ -501,3 +501,32 @@ body{
     @media(orientation: portrait){
     }
 }
+
+.errorPageBack{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://www.cenedi.com/assets/Reparacio%CC%81n-de-Tele%CC%81fonos-Celulares.jpg);
+    background-size: cover;
+}
+
+.errorPageContainer{
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        color: black;
+        font-size: 100px;
+        margin: 0px;
+    }
+
+    h3{
+        color: black;
+        font-size: 30px;
+        margin: 0px;
+    }
+}
