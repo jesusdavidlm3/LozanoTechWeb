@@ -1,3 +1,4 @@
+import NavBar from '../components/NavBar'
 import isoTipoBlue from '/src/img/LozanoTechIsotipoBlue.png'
 import imgRef1 from '/src/img/ref1.png'
 import imgRef2 from '/src/img/ref2.png'
@@ -5,6 +6,8 @@ import imgRef3 from '/src/img/ref3.jpg'
 
 export const StartPage = () => {
     return(
+        <>
+        <NavBar />
         <div className="startPage">
             <img className="welcomeLogo" src={isoTipoBlue}/>
             <h1>Hola!</h1>
@@ -51,5 +54,6 @@ export const StartPage = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }

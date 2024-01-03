@@ -2,6 +2,7 @@ import menuIcon from '/src/img/icons/menu.png'
 import isoTipoWhite from '/src/img/LozanoTechIsotipoWhite.png'
 import { Button } from "./Button/Button";
 import { useState } from "react";
+import { Link, Outlet } from 'react-router-dom';
 
 const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onClickAboutUs, onClickComments, onClickMenu}) => {
 
@@ -13,10 +14,10 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
             { displayMenu && 
                 <div className="menu">
                     <img className="burguerMenuIcon" src={menuIcon} onClick={ () => {setDisplayMenu(!displayMenu)}}/>
-                    <h3 onClick={onClickStart}>Inicio</h3>
-                    <h3 onClick={onClickServices}>Servicios</h3>
-                    <h3 onClick={onClickComments}>Comentarios</h3>
-                    <h3 onClick={onClickAboutUs}>Sobre nosotros</h3>
+                    <Link to={'/'}> <h3>Inicio</h3> </Link>
+                    <Link to={'services'}> <h3>Servicios</h3> </Link>
+                    <Link to={'comments'}> <h3>Comentarios</h3> </Link>
+                    <Link to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
                 </div> 
             }
 
@@ -27,10 +28,10 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
 
             <div className="info">
                 <img src={isoTipoWhite} className="logo"/>
-                <h3 onClick={onClickStart}>Inicio</h3>
-                <h3 onClick={onClickAboutUs}>Sobre nosotros</h3>
-                <h3 onClick={onClickServices}>Servicios</h3>
-                <h3 onClick={onClickComments}>Comentarios</h3>
+                <Link to={'/'}> <h3>Inicio</h3> </Link>
+                <Link to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
+                <Link to={'services'}> <h3>Servicios</h3> </Link>
+                <Link to={'comments'}> <h3>Comentarios</h3> </Link>
             </div>
 
             <div className="actions">

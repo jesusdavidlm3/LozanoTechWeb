@@ -1,20 +1,47 @@
 import React from 'react'
+import LoginForm from './routes/LoginForm.jsx'
+import { CheckPage } from './routes/CheckPage.jsx'
+import { StartPage } from './routes/StartPage.jsx'
+import { Services } from './routes/Services.jsx'
+import { Comments } from './routes/Comments.jsx'
+import { AboutUs } from './routes/AboutUs.jsx'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import NavBar from './components/NavBar.jsx'
 import ErrorPage from './routes/ErrorPage.jsx'
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import './index.css'
+import './style.scss'
+import { createBrowserRouter, RouterProvider, BrowserRouter } from "react-router-dom"
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <StartPage />,
     errorElement: <ErrorPage />,
-  }
+  },
+  {
+    path: '/login',
+    element: <LoginForm />,
+  },
+  {
+    path: '/check',
+    element: <CheckPage />,
+  },
+  {
+    path: '/services',
+    element: <Services />,
+  },
+  {
+    path: '/comments',
+    element: <Comments/>,
+  },
+  {
+    path: '/aboutUs',
+    element: <AboutUs />,
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-    <RouterProvider router={router}/>
-  </>
+  <div className='container'>
+      <NavBar />
+      <RouterProvider router={router} />
+  </div>
 )

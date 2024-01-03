@@ -1,9 +1,9 @@
-import LoginForm from './LoginForm'
-import { CheckPage } from './CheckPage'
+import LoginForm from '../routes/LoginForm'
+import { CheckPage } from '../routes/CheckPage'
 import { StartPage } from './StartPage'
 import { Services } from './Services'
-import { Comments } from './Comments'
-import { AboutUs } from './AboutUs'
+import { Comments } from '../routes/Comments'
+import { AboutUs } from '../routes/AboutUs'
 
 const Page = ({display}) => {
     return(

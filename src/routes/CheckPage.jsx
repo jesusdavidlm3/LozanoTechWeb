@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { Button } from "./Button/Button"
-import { TextField } from "./TextField/TextField"
+import { Button } from "../components/Button/Button"
+import { TextField } from "../components/TextField/TextField"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../firebase"
 
