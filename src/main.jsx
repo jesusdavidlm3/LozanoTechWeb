@@ -5,6 +5,7 @@ import { StartPage } from './routes/StartPage.jsx'
 import { Services } from './routes/Services.jsx'
 import { Comments } from './routes/Comments.jsx'
 import { AboutUs } from './routes/AboutUs.jsx'
+import { Root } from './routes/Root.jsx'
 import ReactDOM from 'react-dom/client'
 import NavBar from './components/NavBar.jsx'
 import ErrorPage from './routes/ErrorPage.jsx'
@@ -14,34 +15,39 @@ import { createBrowserRouter, RouterProvider, BrowserRouter } from "react-router
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <StartPage />,
+    element: < Root/>,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: '/login',
-    element: <LoginForm />,
-  },
-  {
-    path: '/check',
-    element: <CheckPage />,
-  },
-  {
-    path: '/services',
-    element: <Services />,
-  },
-  {
-    path: '/comments',
-    element: <Comments/>,
-  },
-  {
-    path: '/aboutUs',
-    element: <AboutUs />,
-  },
+    children:[
+      {
+        path: '/home',
+        element: <StartPage />,
+      },
+      {
+        path: '/login',
+        element: <LoginForm />,
+      },
+      {
+        path: '/check',
+        element: <CheckPage />,
+      },
+      {
+        path: '/services',
+        element: <Services />,
+      },
+      {
+        path: '/comments',
+        element: <Comments/>,
+      },
+      {
+        path: '/aboutUs',
+        element: <AboutUs />,
+      },
+    ]
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div className='container'>
-      <NavBar />
       <RouterProvider router={router} />
   </div>
 )

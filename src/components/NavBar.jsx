@@ -14,7 +14,7 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
             { displayMenu && 
                 <div className="menu">
                     <img className="burguerMenuIcon" src={menuIcon} onClick={ () => {setDisplayMenu(!displayMenu)}}/>
-                    <Link to={'/'}> <h3>Inicio</h3> </Link>
+                    <Link to={'/home'}> <h3>Inicio</h3> </Link>
                     <Link to={'services'}> <h3>Servicios</h3> </Link>
                     <Link to={'comments'}> <h3>Comentarios</h3> </Link>
                     <Link to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
@@ -28,7 +28,7 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
 
             <div className="info">
                 <img src={isoTipoWhite} className="logo"/>
-                <Link to={'/'}> <h3>Inicio</h3> </Link>
+                <Link to={'/home'}> <h3>Inicio</h3> </Link>
                 <Link to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
                 <Link to={'services'}> <h3>Servicios</h3> </Link>
                 <Link to={'comments'}> <h3>Comentarios</h3> </Link>

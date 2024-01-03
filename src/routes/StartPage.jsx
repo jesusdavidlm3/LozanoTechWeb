@@ -6,8 +6,6 @@ import imgRef3 from '/src/img/ref3.jpg'
 
 export const StartPage = () => {
     return(
-        <>
-        <NavBar />
         <div className="startPage">
             <img className="welcomeLogo" src={isoTipoBlue}/>
             <h1>Hola!</h1>
@@ -54,6 +52,5 @@ export const StartPage = () => {
                 </div>
             </div>
         </div>
-        </>
     )
 }
