@@ -14,10 +14,10 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
             { displayMenu && 
                 <div className="menu">
                     <img className="burguerMenuIcon" src={menuIcon} onClick={ () => {setDisplayMenu(!displayMenu)}}/>
-                    <Link to={'/home'}> <h3>Inicio</h3> </Link>
-                    <Link to={'services'}> <h3>Servicios</h3> </Link>
-                    <Link to={'comments'}> <h3>Comentarios</h3> </Link>
-                    <Link to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
+                    <Link className='link' to={'/home'}> <h3>Inicio</h3> </Link>
+                    <Link className='link' to={'services'}> <h3>Servicios</h3> </Link>
+                    <Link className='link' to={'comments'}> <h3>Comentarios</h3> </Link>
+                    <Link className='link' to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
                 </div> 
             }
 
@@ -28,15 +28,15 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
 
             <div className="info">
                 <img src={isoTipoWhite} className="logo"/>
-                <Link to={'/home'}> <h3>Inicio</h3> </Link>
-                <Link to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
-                <Link to={'services'}> <h3>Servicios</h3> </Link>
-                <Link to={'comments'}> <h3>Comentarios</h3> </Link>
+                <Link className='link' to={'/home'}> <h3>Inicio</h3> </Link>
+                <Link className='link' to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
+                <Link className='link' to={'services'}> <h3>Servicios</h3> </Link>
+                <Link className='link' to={'comments'}> <h3>Comentarios</h3> </Link>
             </div>
 
             <div className="actions">
-                <Button className='access' onClick={onClickLogin} label='Acceso para tecnicos' variant='action'></Button>
-                <Button onClick={onClickCheck} label='Consultar reparacion' variant='action'></Button>
+                <Link to={'/login'}> <Button className='access' label='Acceso para tecnicos' variant='action'></Button> </Link>
+                <Link to={'/check'}> <Button onClick={onClickCheck} label='Consultar reparacion' variant='action'></Button> </Link>
             </div>
         </div>
     )

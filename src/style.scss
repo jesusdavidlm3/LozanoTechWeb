@@ -39,7 +39,7 @@ body{
                 display: block;
                 z-index: 15;
                 width: 185px;
-                height: 340px;
+                height: 280px;
                 border-radius: 0px 0px 20px 0px;
                 background-image: url(img/BackGroundPortrait.jpg);
                 position: relative;
@@ -53,10 +53,12 @@ body{
                 left: 10px;
             }
 
-            Link{
-                font-size: 20px;
-                margin-left: 10px;
-                margin-top: 35px;
+            .link{
+                color: white;
+                text-decoration: none;
+                position: relative;
+                top: 30px;
+                left: 10px;
             }
         }
 
@@ -70,7 +72,9 @@ body{
                 display: none;
             }
 
-            h3{
+            .link{
+                color: white;
+                text-decoration: none;
                 &:hover{
                     cursor: pointer;
                 }
@@ -99,21 +103,14 @@ body{
     }
 
     .startPage{
-        width: calc(100vw - 50px);
-        height: 100vh;
+        width: 100vw;
+        height: calc(100vh - 120px);
         padding-top: 50px;
-        margin-bottom: 150px;
-        margin-left: 50px;
-        margin-right: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: start;
         overflow-y: scroll;
-
-        @media(orientation: portrait){
-            margin-top: 100px;
-        }
 
         .welcomeLogo{
             width: 250px;
@@ -312,14 +309,13 @@ body{
         flex-direction: row;
         width: 100vw;
         height: 100vh;
-        margin: 0px;
         justify-content: center;
         align-items: center;
         overflow: hidden;
 
         @media(orientation: portrait){
             flex-direction: column;
-            height: calc(100vh - 60px);
+            height: 100vh;
             overflow: hidden;
         }
 
@@ -333,24 +329,27 @@ body{
             overflow: hidden;
 
             @media(orientation: portrait){
-                height: 25vh;
+                height: 30vh;
                 width: 100vw;
                 align-items: start;
                 margin-top: 40px;
+            }
+
+            .Form{
+                height: 20vh;
             }
         }
 
         .checkContainer2{
             width: 50vw;
             height: calc(100vh - 90px);
-            // background-color: cadetblue;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
 
             @media(orientation: portrait){
-                height: 25vh;
+                height: 50vh;
                 width: 100vw;
                 align-items: start;
             }
@@ -370,6 +369,8 @@ body{
 
                 @media (orientation: portrait){
                     min-width: 70dvw;
+                    position: relative;
+                    top: 35px;
                 }
 
                 h3{
@@ -389,26 +390,20 @@ body{
     }
 
     .services{
-        width: calc(100vw - 50px);
+        width: 100vw;
         height: 100vh;
-        margin-top: 200px;
-        margin-left: 50px;
-        margin-right: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: start;
-
-        @media(orientation: portrait){
-            margin-top: 100px;
-        }
+        overflow-y: scroll;
 
         h1{
             text-align: center;
             color: black;
 
             @media(orientation: portrait){
-                font-size: 40px;
+                font-size: 35px;
                 width: 90vw;
             }
         }
@@ -466,6 +461,12 @@ body{
     }
 
     .aboutUs{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         h1{
             color: black;
@@ -479,6 +480,12 @@ body{
     }
 
     .comments{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         h1{
             color: black;
@@ -495,9 +502,6 @@ body{
 .checkBackground{
     background-image: url(https://www.cenedi.com/assets/Reparacio%CC%81n-de-Tele%CC%81fonos-Celulares.jpg);
     background-size: cover;
-
-    @media(orientation: portrait){
-    }
 }
 
 .errorPageBack{

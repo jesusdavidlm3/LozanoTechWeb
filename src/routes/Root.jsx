@@ -8,9 +8,9 @@ export const Root = () => {
     useEffect( () => navigate('home'), [] )
 
     return(
-        <>
+        <div className="container">
             <NavBar />
             <Outlet />
-        </>
+        </div>
     )
 }
