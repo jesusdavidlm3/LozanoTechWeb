@@ -210,8 +210,9 @@ body{
                         font-size: 20px;
                     }
 
-                    span{
+                    .spanLink{
                         color: black;
+                        text-decoration: none;
 
                         &:hover{
                             cursor: pointer;

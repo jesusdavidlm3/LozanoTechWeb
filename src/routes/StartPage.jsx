@@ -3,6 +3,7 @@ import isoTipoBlue from '/src/img/LozanoTechIsotipoBlue.png'
 import imgRef1 from '/src/img/ref1.png'
 import imgRef2 from '/src/img/ref2.png'
 import imgRef3 from '/src/img/ref3.jpg'
+import { Link } from 'react-router-dom'
 
 export const StartPage = () => {
     return(
@@ -47,7 +48,7 @@ export const StartPage = () => {
                     <p>
                         Contamos con muchos mas servicios que solo reparaciones o
                         mantenimiento preventivo, tenemos una amplia variedad de
-                        servicios. Para conocer mas presiona <span>aqui</span>
+                        servicios. Para conocer mas presiona <Link className='spanLink' to={'/services'}> aqui </Link>
                     </p>
                 </div>
             </div>
