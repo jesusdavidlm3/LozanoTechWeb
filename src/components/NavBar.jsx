@@ -2,10 +2,11 @@ import menuIcon from '/src/img/icons/menu.png'
 import isoTipoWhite from '/src/img/LozanoTechIsotipoWhite.png'
 import { Button } from "./Button/Button";
 import { useState } from "react";
-import { Link, Outlet } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onClickAboutUs, onClickComments, onClickMenu}) => {
+const NavBar = () => {
 
+    const navigate = useNavigate()
     const [displayMenu, setDisplayMenu] = useState(false)
 
     return(
@@ -35,8 +36,8 @@ const NavBar = ({onClickLogin, onClickCheck, onClickStart, onClickServices, onCl
             </div>
 
             <div className="actions">
-                <Link to={'/login'}> <Button className='access' label='Acceso para tecnicos' variant='action'></Button> </Link>
-                <Link to={'/check'}> <Button onClick={onClickCheck} label='Consultar reparacion' variant='action'></Button> </Link>
+                <Button onClick={ () => {navigate('login')} } className='access' label='Acceso para tecnicos' variant='action'></Button>
+                <Button onClick={() => {navigate('check')}} label='Consultar reparacion' variant='action'></Button>
             </div>
         </div>
     )
