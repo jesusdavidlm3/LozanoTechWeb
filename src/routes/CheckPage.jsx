@@ -9,6 +9,7 @@ export const CheckPage = () => {
     const [device, setDevice] = useState({ device: 'desconocido', state: 'desconocido' })
 
     async function checkStatus() {
+        checker.preventDefault()
         const docRef = doc(db, 'repairStatus', controlNumber.value);
         const docSnap = await getDoc(docRef);
         setDevice(docSnap.data());
@@ -20,10 +21,10 @@ export const CheckPage = () => {
         <div className="checkBackground">
             <div className="mainCheckContainer">
                 <div className="checkContainer1">
-                    <div className="Form">
+                    <form id="checker" onSubmit={checkStatus} className="Form">
                         <TextField id='controlNumber' label='Numero de control'></TextField>
-                        <Button onClick={checkStatus} variant='allow' label='Consultar'></Button>
-                    </div>
+                        <Button type='submit' variant='allow' label='Consultar'></Button>
+                    </form>
                 </div>
 
                 <div className="checkContainer2">
