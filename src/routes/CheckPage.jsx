@@ -8,8 +8,8 @@ export const CheckPage = () => {
 
     const [device, setDevice] = useState({ device: 'desconocido', state: 'desconocido' })
 
-    async function checkStatus() {
-        checker.preventDefault()
+    async function checkStatus(e) {
+        e.preventDefault()
         const docRef = doc(db, 'repairStatus', controlNumber.value);
         const docSnap = await getDoc(docRef);
         setDevice(docSnap.data());
