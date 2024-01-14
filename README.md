@@ -13,3 +13,9 @@ Para correr el proyecto es necesario contar con Node.js y NPM instalados y el ed
 -------Atributions - Atribuciones-------
 
 <a href="https://www.flaticon.es/iconos-gratis/menu" title="menú iconos">Menú iconos creados por Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.es/iconos-gratis/vision" title="visión iconos">Visión iconos creados por Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.es/iconos-gratis/editar" title="editar iconos">Editar iconos creados por Pixel perfect - Flaticon</a>
+
+<a href="https://www.flaticon.es/iconos-gratis/desinstalar" title="desinstalar iconos">Desinstalar iconos creados por Bharat Icons - Flaticon</a>

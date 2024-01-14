@@ -2,13 +2,19 @@ import { useState } from 'react'
 import { Button } from "../components/Button/Button";
 import { TextField } from "../components/TextField/TextField";
 import { DatabaseChanger } from '../components/DatabaseChanger';
+import { AddModal } from '../components/AddModal';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Auth } from '../../firebase';
 
 
 const LoginForm = () => {
 
-    const [singed, setSinged] = useState(false)
+    const [singed, setSinged] = useState(true)
+    const [Adding, setAdding] = useState(true)
+
+    const Add = () => {
+        setAdding(!Adding)
+    }
 
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -28,7 +34,10 @@ const LoginForm = () => {
     return(
         <>
             {singed ? (
-                <DatabaseChanger/>
+                <>
+                    <DatabaseChanger Add={Add}/>
+                    { Adding == true && <AddModal/> }
+                </>
             ):(
             <form onSubmit={handleSubmit} className="Form">
                 <h1>Iniciar sesion</h1>
