@@ -546,6 +546,7 @@ body{
         flex-direction: column;
         padding: 15px;
         gap: 15px;
+        overflow-y: scroll;
 
         .result{
             display: flex;
@@ -610,7 +611,6 @@ body{
     backdrop-filter: blur(10px);
     position: relative;
     bottom: 100vh;
-    // left: 25vw;
     display: flex;
     justify-content: center;
     align-items: center;
