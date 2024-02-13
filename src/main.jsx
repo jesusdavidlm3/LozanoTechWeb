@@ -6,6 +6,7 @@ import { Services } from './routes/Services.jsx'
 import { Comments } from './routes/Comments.jsx'
 import { AboutUs } from './routes/AboutUs.jsx'
 import { Root } from './routes/Root.jsx'
+import Manage from './routes/Manage.jsx'
 import ReactDOM from 'react-dom/client'
 import NavBar from './components/NavBar.jsx'
 import ErrorPage from './routes/ErrorPage.jsx'
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/aboutUs',
         element: <AboutUs />,
+      },
+      {
+        path: '/manage',
+        element: <Manage />,
       },
     ]
   }

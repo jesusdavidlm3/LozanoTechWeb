@@ -7,8 +7,8 @@ import s6 from '/src/img/services/s6.jpg'
 import s7 from '/src/img/services/s7.jpg'
 import s8 from '/src/img/services/s8.png'
 import s9 from '/src/img/services/s9.jpg'
-import s10 from '/src/img/services/s10.jpg'
-import s11 from '/src/img/services/s11.jpg'
+import s10 from '/src/img/services/s10.avif'
+import s11 from '/src/img/services/s11.avif'
 
 export const Services = () => {
     return(

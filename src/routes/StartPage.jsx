@@ -29,7 +29,7 @@ export const StartPage = () => {
                 </div>
             </div>
 
-            <div className="StartInfoContainer">
+            <div className="StartInfoContainer reverse">
                 <div className="right">
                     <h1>Todo a medida</h1>
                     <p>

@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { Button } from "../components/Button/Button";
 import { TextField } from "../components/TextField/TextField";
-import { DatabaseChanger } from '../components/DatabaseChanger';
 import { AddModal } from '../components/AddModal';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Auth } from '../../firebase';
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
+
+    const navigate = useNavigate()
 
     const [singed, setSinged] = useState(true)
     const [Adding, setAdding] = useState(true)
@@ -26,26 +28,20 @@ const LoginForm = () => {
             const user = userCredential.user;
             console.log(user)
             if(user != null){
-                setSinged(true)
+                navigate('/manage')
             }
         })
     }
 
     return(
         <>
-            {singed ? (
-                <>
-                    <DatabaseChanger Add={Add}/>
-                    { Adding == true && <AddModal/> }
-                </>
-            ):(
             <form onSubmit={handleSubmit} className="Form">
                 <h1>Iniciar sesion</h1>
                 <TextField id='email' label='Correo' type="email"></TextField>
                 <TextField id='password' type="password" label='Contraseña'></TextField>
 
                 <Button type="submit" variant='allow' label='iniciar Sesion'></Button>
-            </form>)}
+            </form>
         </>
     )
 }
