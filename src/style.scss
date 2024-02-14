@@ -525,12 +525,36 @@ body{
         justify-content: space-around;
         align-items: center;
 
-        img{
-            width: 40px;
-            height: 40px;
-            padding: 5px;
-            border: 3px solid white;
-            border-radius: 15px;
+        .searchComponent{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            #searchInput{
+                width: 70vw;
+            }
+
+            button{
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                outline: none;
+
+            }
+
+            img{
+                width: 40px;
+                height: 40px;
+                padding: 5px;
+                border: 3px solid white;
+                border-radius: 15px;
+                transition: all .2s;
+
+                &:hover{
+                    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.3);
+                    cursor: pointer;
+                }
+            }
         }
     }
 
@@ -559,11 +583,27 @@ body{
             color: white;
             background-color: rgba(30, 30, 30, 0.3);
 
+            h2{
+                text-justify: center;
+
+                span{
+                    color: lightgray;
+                    font-size: 25px;
+                }
+            }
+
+
             .icons{
                 display: flex;
                 gap: 15px;
                 img{
                     width: 50px;
+                    transition: all .2s;
+
+                    &:hover{
+                        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.9));
+                        cursor: pointer;
+                    }
                 }
             }
         }

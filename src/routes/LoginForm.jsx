@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Button } from "../components/Button/Button";
 import { TextField } from "../components/TextField/TextField";
-import { AddModal } from '../components/AddModal';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
