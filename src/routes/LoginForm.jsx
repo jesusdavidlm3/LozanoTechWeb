@@ -25,7 +25,6 @@ const LoginForm = () => {
         signInWithEmailAndPassword(Auth, userEmail, userPassword)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log(user)
             if(user != null){
                 navigate('/manage')
             }

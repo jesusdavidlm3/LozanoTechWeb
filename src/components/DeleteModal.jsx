@@ -1,10 +1,11 @@
+import { doc, deleteDoc } from "firebase/firestore";
 import { Button } from "./Button/Button"
 import { db } from "../../firebase" 
 
-export const DeleteModal = ({closeModal}) => {
+export const DeleteModal = ({closeModal, docId}) => {
 
-    const handleConfirm = () => {
-        console.log('Eliminaste este registro')
+    async function handleConfirm(){
+        await deleteDoc(doc(db, "repairStatud", {docId}));
     }
 
     return(

@@ -43,10 +43,10 @@ const Manage = () => {
         const q = query(collection(db, "repairStatus"), where("client", "==", e.target[0].value));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-            oneDoc = [...oneDoc, doc.data()]
-            console.log(oneDoc)
+            oneDoc = [...oneDoc, {id: doc.id, data: doc.data()}]
         });
         setObtainedDocs(oneDoc)
+        console.log(oneDoc)
     }
 
     return(
@@ -63,10 +63,9 @@ const Manage = () => {
             </div>
 
             <div className="resultBox">
-
                 {obtainedDocs.map( (doc) => (
                     <div className="result">
-                        <h2>{doc.client} | <span>{doc.device}</span></h2>
+                        <h2>{doc.data.client} | <span>{doc.data.device}</span></h2>
 
                         <div className="icons">
                             <img src={deleteLogo} onClick={ () => handleDeleteModal() }/>
