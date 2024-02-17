@@ -15,6 +15,7 @@ import { db } from "../../firebase";
 
 const Manage = () => {
 
+    const [selectedDoc, setSelectedDoc] = useState()
     let oneDoc = []
     const [addModal, setAddModal] = useState(false)
     const [deleteModal, setDeleteModal] = useState(false)
@@ -26,16 +27,28 @@ const Manage = () => {
         setAddModal(!addModal)
     }
 
-    function handleDeleteModal(){
+    function handleDeleteModal(docId){
         setDeleteModal(!deleteModal)
+        setSelectedDoc(docId)
+        // console.log(docId)
     }
 
-    function handleViewModal(){
+    function handleViewModal(docId){
         setViewModal(!viewModal)
+        if (selectedDoc = ''){
+            selectedDoc = docId
+        }else{
+            selectedDoc = ''
+        }
     }
 
-    function handleEditModal(){
+    function handleEditModal(docId){
         setEditModal(!editModal)
+        if (selectedDoc = ''){
+            selectedDoc = docId
+        }else{
+            selectedDoc = ''
+        }
     }
 
     async function handleSearch(e){
@@ -46,7 +59,6 @@ const Manage = () => {
             oneDoc = [...oneDoc, {id: doc.id, data: doc.data()}]
         });
         setObtainedDocs(oneDoc)
-        console.log(oneDoc)
     }
 
     return(
@@ -68,7 +80,7 @@ const Manage = () => {
                         <h2>{doc.data.client} | <span>{doc.data.device}</span></h2>
 
                         <div className="icons">
-                            <img src={deleteLogo} onClick={ () => handleDeleteModal() }/>
+                            <img src={deleteLogo} onClick={ () => handleDeleteModal(doc.id) }/>
                             <img src={viewLogo} onClick={ () => handleViewModal() }/>
                             <img src={editLogo} onClick={ () => handleEditModal() }/>
                         </div>
@@ -77,7 +89,7 @@ const Manage = () => {
             </div>
 
             { addModal && <AddModal closeModal={ () => handleAddModal() }></AddModal> }
-            { deleteModal && <DeleteModal closeModal={ () => handleDeleteModal() }></DeleteModal> }
+            { deleteModal && <DeleteModal docId={selectedDoc} closeModal={ () => handleDeleteModal() }></DeleteModal> }
             { viewModal && <ViewModal closeModal={ () => handleViewModal() }></ViewModal> }
             { editModal && <EditModal closeModal={ () => handleEditModal() }></EditModal> }
         </div>

@@ -5,7 +5,7 @@ import { db } from "../../firebase"
 export const DeleteModal = ({closeModal, docId}) => {
 
     async function handleConfirm(){
-        await deleteDoc(doc(db, "repairStatud", {docId}));
+        await deleteDoc(doc(db, "repairStatus", docId));
     }
 
     return(
