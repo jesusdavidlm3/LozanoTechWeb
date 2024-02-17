@@ -16,6 +16,7 @@ import { db } from "../../firebase";
 const Manage = () => {
 
     const [selectedDoc, setSelectedDoc] = useState()
+    const [docInfo, setDocInfo] = useState()
     let oneDoc = []
     const [addModal, setAddModal] = useState(false)
     const [deleteModal, setDeleteModal] = useState(false)
@@ -30,25 +31,16 @@ const Manage = () => {
     function handleDeleteModal(docId){
         setDeleteModal(!deleteModal)
         setSelectedDoc(docId)
-        // console.log(docId)
     }
 
-    function handleViewModal(docId){
+    function handleViewModal(docInfo){
         setViewModal(!viewModal)
-        if (selectedDoc = ''){
-            selectedDoc = docId
-        }else{
-            selectedDoc = ''
-        }
+        setDocInfo(docInfo)
     }
 
     function handleEditModal(docId){
         setEditModal(!editModal)
-        if (selectedDoc = ''){
-            selectedDoc = docId
-        }else{
-            selectedDoc = ''
-        }
+        setSelectedDoc(docId)
     }
 
     async function handleSearch(e){
@@ -81,8 +73,8 @@ const Manage = () => {
 
                         <div className="icons">
                             <img src={deleteLogo} onClick={ () => handleDeleteModal(doc.id) }/>
-                            <img src={viewLogo} onClick={ () => handleViewModal() }/>
-                            <img src={editLogo} onClick={ () => handleEditModal() }/>
+                            <img src={viewLogo} onClick={ () => handleViewModal(doc.data) }/>
+                            <img src={editLogo} onClick={ () => handleEditModal(doc.id) }/>
                         </div>
                     </div>
                 ))}
@@ -90,7 +82,7 @@ const Manage = () => {
 
             { addModal && <AddModal closeModal={ () => handleAddModal() }></AddModal> }
             { deleteModal && <DeleteModal docId={selectedDoc} closeModal={ () => handleDeleteModal() }></DeleteModal> }
-            { viewModal && <ViewModal closeModal={ () => handleViewModal() }></ViewModal> }
+            { viewModal && <ViewModal docInfo={docInfo} closeModal={ () => handleViewModal() }></ViewModal> }
             { editModal && <EditModal closeModal={ () => handleEditModal() }></EditModal> }
         </div>
     )
