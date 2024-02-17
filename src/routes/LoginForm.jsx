@@ -10,13 +10,6 @@ const LoginForm = () => {
 
     const navigate = useNavigate()
 
-    const [singed, setSinged] = useState(true)
-    const [Adding, setAdding] = useState(true)
-
-    const Add = () => {
-        setAdding(!Adding)
-    }
-
     const handleSubmit = (e) =>{
         e.preventDefault()
         const userEmail = e.target[0].value;

@@ -6,13 +6,22 @@ import { useState } from "react"
 
 export const AddModal = ({closeModal}) => {
 
-    const [control, setControl] = useState('')
-
-    const collectionRef = collection(db, 'repairStatus')
-    console.log(collectionRef)
+    const date = new Date()
+    const fecha = date.toLocaleDateString()
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const newInfo = {
+            control: e.target[0].value,
+            name: e.target[1].value,
+            phone: e.target[2].value,
+            device: e.target[3].value,
+            notes: e.target[4].value,
+            created: fecha,
+            modified: fecha,
+        }
+
+        
     }
 
     return(
@@ -20,10 +29,12 @@ export const AddModal = ({closeModal}) => {
             <div className="AddModal">
                 <h1>Ingrese los datos del nuevo registro</h1>
                 <form onSubmit={handleSubmit}>
-                    <TextField label={control} value={control}></TextField>
+                    <TextField label='Numero de control'></TextField>
                     <TextField label='Nombre'></TextField>
+                    <TextField label='Telefono'></TextField>
                     <TextField label='Equipo'></TextField>
                     <TextField label='Estado'></TextField>
+                    <TextField label='Notas'></TextField>
                     <Button className='modalButtonAdd' label='Agregar' type='submit' variant='allow'></Button>
                 </form>
 
