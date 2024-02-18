@@ -13,15 +13,15 @@ export const AddModal = ({closeModal}) => {
         e.preventDefault()
         const newInfo = {
             control: e.target[0].value,
-            name: e.target[1].value,
+            client: e.target[1].value,
             phone: e.target[2].value,
             device: e.target[3].value,
-            notes: e.target[4].value,
+            state: e.target[4].value,
+            notes: e.target[5].value,
             created: fecha,
             modified: fecha,
         }
-
-        
+        console.log(newInfo)
     }
 
     return(

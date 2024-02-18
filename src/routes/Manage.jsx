@@ -38,9 +38,10 @@ const Manage = () => {
         setDocInfo(docInfo)
     }
 
-    function handleEditModal(docId){
+    function handleEditModal(docId, docInfo){
         setEditModal(!editModal)
         setSelectedDoc(docId)
+        setDocInfo(docInfo)
     }
 
     async function handleSearch(e){
@@ -74,7 +75,7 @@ const Manage = () => {
                         <div className="icons">
                             <img src={deleteLogo} onClick={ () => handleDeleteModal(doc.id) }/>
                             <img src={viewLogo} onClick={ () => handleViewModal(doc.data) }/>
-                            <img src={editLogo} onClick={ () => handleEditModal(doc.id) }/>
+                            <img src={editLogo} onClick={ () => handleEditModal(doc.id, doc.data) }/>
                         </div>
                     </div>
                 ))}
@@ -83,7 +84,7 @@ const Manage = () => {
             { addModal && <AddModal closeModal={ () => handleAddModal() }></AddModal> }
             { deleteModal && <DeleteModal docId={selectedDoc} closeModal={ () => handleDeleteModal() }></DeleteModal> }
             { viewModal && <ViewModal docInfo={docInfo} closeModal={ () => handleViewModal() }></ViewModal> }
-            { editModal && <EditModal closeModal={ () => handleEditModal() }></EditModal> }
+            { editModal && <EditModal docId={selectedDoc} docInfo={docInfo} closeModal={ () => handleEditModal() }></EditModal> }
         </div>
     )
 }

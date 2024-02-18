@@ -686,7 +686,6 @@ body{
                 position: relative;
                 right: 75px;
                 top: 15px;
-
             }
         }
 
@@ -749,7 +748,7 @@ body{
     .EditModal{
         background-color: rgba(255, 255, 255, 0.5);
         width: 30vw;
-        height: 60vh;
+        height: 65vh;
         display: flex;
         flex-direction: column;
         gap: 25px;
@@ -761,6 +760,23 @@ body{
         form{
             display: flex;
             flex-direction: column;
+            gap: 10px;
+            position: relative;
+            bottom: 30px;
+
+            .modalButtonSave{
+                width: 50px;
+                position: relative;
+                right: 30px;
+                top: 25px;
+            }
+        }
+
+        .modalButtonClose{
+            width: 50px;
+            position: relative;
+            left: 75px;
+            bottom: 80px;
         }
 
         h1{
