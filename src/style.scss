@@ -671,6 +671,15 @@ body{
             margin-bottom: 20px;
         }
 
+        p{
+            font-weight: 900;
+            font-size: 20px;
+            margin: 0px;
+            color: rgb(46, 140, 57);
+            position: relative;
+            bottom: 15px;
+        }
+
         form{
             display: flex;
             flex-direction: column;
@@ -685,7 +694,6 @@ body{
                 width: 50px;
                 position: relative;
                 right: 75px;
-                top: 15px;
             }
         }
 
@@ -693,7 +701,7 @@ body{
             width: 50px;
             position: relative;
             left: 75px;
-            bottom: 35px;
+            bottom: 50px;
         }
     }
 
@@ -713,6 +721,14 @@ body{
             display: flex;
             flex-direction: row;
             gap: 15px;
+        }
+
+        p{
+            font-size: 20px;
+            margin: 0px;
+            color: red;
+            position: relative;
+            bottom: 15px;
         }
 
         h1{
@@ -741,7 +757,8 @@ body{
         }
 
         h3{
-            margin: 0px;
+            margin: 5px;
+            text-align: center;
         }
     }
 
@@ -783,6 +800,15 @@ body{
             margin: 0px;
             margin-bottom: 20px;
             text-align: center;
+        }
+
+        p{
+            font-weight: 900;
+            font-size: 20px;
+            margin: 0px;
+            color: rgb(46, 140, 57);
+            position: relative;
+            bottom: 25px;
         }
     }
 }

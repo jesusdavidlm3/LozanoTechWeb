@@ -7,6 +7,7 @@ import { loggedUserContext } from "../context/loggedUserContext"
 
 export const AddModal = ({closeModal}) => {
 
+    const [created, setCreated] = useState(false)
     const { userEmail } = useContext(loggedUserContext)
     const date = new Date()
     const fecha = date.toLocaleDateString()
@@ -24,25 +25,14 @@ export const AddModal = ({closeModal}) => {
             creator: userEmail,
             modifier: userEmail,
         });
-        const newInfo = {
-            control: e.target[0].value,
-            client: e.target[1].value,
-            phone: e.target[2].value,
-            device: e.target[3].value,
-            state: e.target[4].value,
-            notes: e.target[5].value,
-            created: fecha,
-            modified: fecha,
-            creator: userEmail,
-            modifier: userEmail,
-        }
-        console.log(newInfo)
+        setCreated(true)
     }
 
     return(
         <div className="ModalContainer">
             <div className="AddModal">
                 <h1>Ingrese los datos del nuevo registro</h1>
+                { created && <p>Registro agreado con exito</p> }
                 <form onSubmit={handleSubmit}>
                     <TextField label='Numero de control'></TextField>
                     <TextField label='Nombre'></TextField>

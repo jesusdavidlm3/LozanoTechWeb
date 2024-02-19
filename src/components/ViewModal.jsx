@@ -14,7 +14,7 @@ export const ViewModal = ({docInfo, closeModal}) => {
                     <h3>Equipo: {docInfo.device}</h3>
                     <h3>Telefono: {docInfo.phone}</h3>
                     <h3>Estado: {docInfo.state}</h3>
-                    <h3>Recibido el: {docInfo.created}</h3>
+                    <h3>Recibido el: {docInfo.created} por {docInfo.modifier}</h3>
                     <h3>Modificado el {docInfo.modified} por {docInfo.modifier}</h3>
                     <h3>Notas: {docInfo.notes}</h3>
                     <Button className='modalButtonClose' label='Cerrar' variant='deny' onClick={ () => closeModal() }></Button>
