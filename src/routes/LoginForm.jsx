@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Button } from "../components/Button/Button";
 import { TextField } from "../components/TextField/TextField";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
-
+import { loggedUserContext } from '../context/loggedUserContext';
 
 const LoginForm = () => {
 
+    const { setUserEmail } = useContext(loggedUserContext)
     const navigate = useNavigate()
 
     const handleSubmit = (e) =>{
@@ -19,6 +20,7 @@ const LoginForm = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             if(user != null){
+                setUserEmail(user.email)
                 navigate('/manage')
             }
         })

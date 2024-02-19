@@ -1,16 +1,29 @@
 import { Button } from "./Button/Button"
 import { TextField } from "./TextField/TextField"
 import { db } from "../../firebase" 
-import { QuerySnapshot, collection, count } from "firebase/firestore" 
-import { useState } from "react"
+import { doc, setDoc } from "firebase/firestore"
+import { useState, useContext } from "react"
+import { loggedUserContext } from "../context/loggedUserContext"
 
 export const AddModal = ({closeModal}) => {
 
+    const { userEmail } = useContext(loggedUserContext)
     const date = new Date()
     const fecha = date.toLocaleDateString()
 
-    const handleSubmit = (e) => {
+    async function handleSubmit(e){
         e.preventDefault()
+        await setDoc(doc(db, "repairStatus", e.target[0].value), {
+            client: e.target[1].value,
+            phone: e.target[2].value,
+            device: e.target[3].value,
+            state: e.target[4].value,
+            notes: e.target[5].value,
+            created: fecha,
+            modified: fecha,
+            creator: userEmail,
+            modifier: userEmail,
+        });
         const newInfo = {
             control: e.target[0].value,
             client: e.target[1].value,
@@ -20,6 +33,8 @@ export const AddModal = ({closeModal}) => {
             notes: e.target[5].value,
             created: fecha,
             modified: fecha,
+            creator: userEmail,
+            modifier: userEmail,
         }
         console.log(newInfo)
     }

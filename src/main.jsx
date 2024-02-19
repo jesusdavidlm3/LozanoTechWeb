@@ -12,6 +12,7 @@ import NavBar from './components/NavBar.jsx'
 import ErrorPage from './routes/ErrorPage.jsx'
 import './style.scss'
 import { createBrowserRouter, RouterProvider, BrowserRouter } from "react-router-dom"
+import LoggedUserProvider from './context/LoggedUserProvider.jsx'
 
 const router = createBrowserRouter([
   {
@@ -52,7 +53,10 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='container'>
+  <LoggedUserProvider>
+    <div className='container'>
       <RouterProvider router={router} />
-  </div>
+    </div>
+  </LoggedUserProvider>
+  
 )
