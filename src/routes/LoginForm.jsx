@@ -28,12 +28,13 @@ const LoginForm = () => {
 
     return(
         <>
-            <form onSubmit={handleSubmit} className="Form">
+            <form onSubmit={handleSubmit} className="Login">
                 <h1>Iniciar sesion</h1>
                 <TextField id='email' label='Correo' type="email"></TextField>
                 <TextField id='password' type="password" label='Contraseña'></TextField>
 
                 <Button type="submit" variant='allow' label='iniciar Sesion'></Button>
+                <p onClick={ () => navigate('/Admin') }>Ingresar como administrador</p>
             </form>
         </>
     )

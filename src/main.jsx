@@ -13,6 +13,9 @@ import ErrorPage from './routes/ErrorPage.jsx'
 import './style.scss'
 import { createBrowserRouter, RouterProvider, BrowserRouter } from "react-router-dom"
 import LoggedUserProvider from './context/LoggedUserProvider.jsx'
+import Admin from './routes/Admin.jsx'
+import RegisterUser from './routes/RegisterUser.jsx'
+import AdminUsers from './routes/AdminUsers.jsx'
 
 const router = createBrowserRouter([
   {
@@ -47,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: '/manage',
         element: <Manage />,
+      },
+      {
+        path: '/Admin',
+        element: <Admin />,
       },
     ]
   }

@@ -266,7 +266,7 @@ body{
         }
     }
 
-    .Form{
+    .Login{
         width: 100vw;
         height: calc(100vh - 80px);
         align-items: center;
@@ -277,36 +277,47 @@ body{
 
         .submit{
             margin-top: 5px;
+            cursor: pointer;
         }
 
-        & h1{
+        h1{
             color: black;
             margin: 0;
         }
+
+        p{
+            font-weight: 900;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 
-    .DatabaseChanger{
+    .Admin{
+        margin: 0px;
+        width: 100vw;
+        height: calc(100vh - 80px);
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        .DatabaseChangerBanner{
-            width: 95vw;
-            height: 10vh;
+        form{
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            flex-direction: column;
+            gap: 10px;
             align-items: center;
-            background-color: tomato;
 
-            #searcher{
-                width: 80vw;
+            .submit{
+                margin-top: 5px;
+                cursor: pointer;
             }
         }
 
-        .SearchResults{
-            background-color: cadetblue;
-            width: 95vw;
-            height: 75vh;
+        .rejected{
+            color: red;
+            font-size: 50px;
         }
     }
 

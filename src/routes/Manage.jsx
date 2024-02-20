@@ -11,6 +11,7 @@ import editLogo from '../img/icons/editar.png';
 import viewLogo from '../img/icons/vision.png';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase"; 
+import { Capitalize } from "../functions/NormalizeInfo";
 
 
 const Manage = () => {
@@ -46,8 +47,16 @@ const Manage = () => {
 
     async function handleSearch(e){
         e.preventDefault()
-        const q = query(collection(db, "repairStatus"), where("client", "==", e.target[0].value));
+        const q = query(collection(db, "repairStatus"), where("client", "==", Capitalize(e.target[0].value)));
         const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            oneDoc = [...oneDoc, {id: doc.id, data: doc.data()}]
+        });
+        setObtainedDocs(oneDoc)
+    }
+
+    async function showAll(){
+        const querySnapshot = await getDocs(collection(db, "repairStatus"));
         querySnapshot.forEach((doc) => {
             oneDoc = [...oneDoc, {id: doc.id, data: doc.data()}]
         });
@@ -63,7 +72,7 @@ const Manage = () => {
                         <img src={searchLogo}/>
                     </button>
                 </form>
-                
+                <Button label='Mostrar todo' variant='action' onClick={ () => showAll()}></Button>
                 <Button label='Agregar' variant='action' onClick={ () => handleAddModal()}></Button>
             </div>
 

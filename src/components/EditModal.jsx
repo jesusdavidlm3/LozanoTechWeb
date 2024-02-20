@@ -18,7 +18,7 @@ export const EditModal = ({docId, docInfo, closeModal}) => {
             client: e.target[1].value,
             device: e.target[2].value,
             state: e.target[3].value,
-            notes: docInfo.notes + ' ' + e.target[4].value,
+            notes: docInfo.notes + " \| " + e.target[4].value,
             created: docInfo.created,
             modified: fecha,
             creator: docInfo.creator,
