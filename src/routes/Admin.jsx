@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Button } from "../components/Button/Button";
 import { TextField } from "../components/TextField/TextField";
 import { loggedUserContext } from "../context/loggedUserContext"; 
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, getDoc } from "firebase/firestore"
 import { Auth } from '../../firebase';
 import { db } from "../../firebase"; 
@@ -35,6 +35,19 @@ const Admin = () => {
         })
     }
 
+    async function handleRegister(e){
+        e.preventDefault()
+        const newUserEmail = e.target[0].value
+        const newUserPassword = e.target[1].value
+        const newUserAdmin = e.target[2].checked
+
+        createUserWithEmailAndPassword(Auth, newUserEmail, newUserPassword)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(newUserAdmin)
+        })
+    }
+
     return(
         <div className="Admin">
             { logged ? (
@@ -45,7 +58,17 @@ const Admin = () => {
                             <Button variant='action' label='Agregar usuario' onClick={ () => setOperation('add') }></Button>
                             <Button variant='action' label='Administrar usuarios' onClick={ () => setOperation('modify') }></Button>
 
-                            { operation == 'add' && <>Aqui vamos a agregar usuarios</> }
+                            { operation == 'add' && 
+                                <div className="formNew">
+                                    <form onSubmit={handleRegister}>
+                                        <TextField label='Correo Electronico' type='email'></TextField>
+                                        <TextField label='Contraseña' type='password'></TextField>
+                                        <label for='chkadm'><input id='chkadm' type="checkbox"/>Administrador</label>
+                                        
+
+                                        <Button label='Registrar' type='submit' variant='allow'></Button>
+                                    </form>
+                                </div> }
                             { operation == 'modify' && <>Aqui vamos a modificar usuarios</> }
                         </div>
                     ):(
