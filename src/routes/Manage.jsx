@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 const Manage = () => {
 
     const navigate = useNavigate()
-    const {logged, setLogged} = useContext(loggedUserContext)
+    const {logged, setLogged, setUserRealName, setAdmin} = useContext(loggedUserContext)
     const [selectedDoc, setSelectedDoc] = useState()
     const [docInfo, setDocInfo] = useState()
     let oneDoc = []
@@ -75,6 +75,8 @@ const Manage = () => {
 
     function handleLogOut(){
         setLogged(false)
+        setAdmin(false)
+        setUserRealName('')
         navigate('/home')
     }
 
