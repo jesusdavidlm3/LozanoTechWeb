@@ -1,6 +1,6 @@
 import './TextFieldStyle.scss'
 
-export const TextField = ({label, type, id, readOnly, value, required}) => {
+export const TextField = ({label, type, id, readOnly, value, pattern, title}) => {
 
     return(
         <input 
@@ -10,6 +10,8 @@ export const TextField = ({label, type, id, readOnly, value, required}) => {
             id={id}
             placeholder={label}
             type={type}
+            pattern={pattern}
+            title={title}
         ></input>
     )
 }

@@ -70,7 +70,12 @@ const Admin = () => {
                                         { createSuccess && <h3>Usuario creado satisfactoriamente</h3> }
                                         <TextField label='Correo Electronico' type='email'></TextField>
                                         <TextField label='Nombre'></TextField>
-                                        <TextField label='Contraseña' type='password'></TextField>
+                                        <TextField
+                                            label='Contraseña'
+                                            type='password'
+                                            pattern="[a-z, A-Z, 0-9] {8,20}"
+                                            title='La contraseña debe contener de 8 a 20 caracteres, numeros y letras mayusculas y minusculas'
+                                        ></TextField>
                                         <label htmlFor='chkadm'><input id='chkadm' type="checkbox"/>Administrador</label>
                                         <Button label='Registrar' type='submit' variant='allow'></Button>
                                     </form>
