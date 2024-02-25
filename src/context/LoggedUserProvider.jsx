@@ -3,11 +3,12 @@ import { loggedUserContext } from "./loggedUserContext";
 
 const LoggedUserProvider = ({children}) => {
 
-    const [userEmail, setUserEmail] = useState('')
-    const [admin, setAdmin] = useState('')
+    const [userRealName, setUserRealName] = useState('')
+    const [logged, setLogged] = useState(false)
+    const [admin, setAdmin] = useState(false)
 
     return(
-    <loggedUserContext.Provider value={{userEmail, setUserEmail, admin, setAdmin}}>
+    <loggedUserContext.Provider value={{userRealName, setUserRealName, admin, setAdmin, logged, setLogged}}>
         {children}
     </loggedUserContext.Provider>
     )

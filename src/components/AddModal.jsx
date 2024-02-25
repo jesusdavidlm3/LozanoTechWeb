@@ -9,7 +9,7 @@ import { Capitalize, PhoneNormalize } from "../functions/NormalizeInfo"
 export const AddModal = ({closeModal}) => {
 
     const [created, setCreated] = useState(false)
-    const { userEmail } = useContext(loggedUserContext)
+    const { userRealName } = useContext(loggedUserContext)
     const date = new Date()
     const fecha = date.toLocaleDateString()
 
@@ -23,8 +23,8 @@ export const AddModal = ({closeModal}) => {
             notes: e.target[5].value,
             created: fecha,
             modified: fecha,
-            creator: userEmail,
-            modifier: userEmail,
+            creator: userRealName,
+            modifier: userRealName,
         });
         setCreated(true)
     }

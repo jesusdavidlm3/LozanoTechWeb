@@ -1,26 +1,36 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Button } from "../components/Button/Button";
 import { TextField } from "../components/TextField/TextField";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import { loggedUserContext } from '../context/loggedUserContext';
+import { getUserInfo } from '../functions/firebaseQuerys';
 
 const LoginForm = () => {
 
-    const { setUserEmail } = useContext(loggedUserContext)
+    const { setUserRealName, setLogged, logged, setAdmin } = useContext(loggedUserContext)
     const navigate = useNavigate()
 
-    const handleSubmit = (e) =>{
+    useEffect( () => {
+        if(logged == true){
+            navigate('/manage')
+        }
+    } )
+
+    async function handleSubmit(e){
         e.preventDefault()
         const userEmail = e.target[0].value;
         const userPassword = e.target[1].value;
 
         signInWithEmailAndPassword(Auth, userEmail, userPassword)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
             const user = userCredential.user;
             if(user != null){
-                setUserEmail(user.email)
+                let userInfo = await getUserInfo(user.uid)
+                setAdmin(userInfo.admin)
+                setUserRealName(userInfo.name)
+                setLogged(true)
                 navigate('/manage')
             }
         })

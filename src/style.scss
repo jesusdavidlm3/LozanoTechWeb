@@ -543,7 +543,7 @@ body{
             gap: 10px;
 
             #searchInput{
-                width: 70vw;
+                width: 60vw;
             }
 
             button{
@@ -825,10 +825,27 @@ body{
 }
 
 .Admin{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .operations{
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 10px;
+
+        .formNew{
+
+            h3{
+                margin: 0px;
+                position: relative;
+                bottom: 15px;
+                color: rgb(46, 140, 57);
+                font-weight: 900;
+            }
+        }
     }
 }

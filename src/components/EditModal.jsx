@@ -7,7 +7,7 @@ import { loggedUserContext } from "../context/loggedUserContext"
 
 export const EditModal = ({docId, docInfo, closeModal}) => {
 
-    const {userEmail} = useContext(loggedUserContext)
+    const {userRealName} = useContext(loggedUserContext)
     const [edited, setEdited] = useState(false)
     const date = new Date()
     const fecha = date.toLocaleDateString()
@@ -22,7 +22,7 @@ export const EditModal = ({docId, docInfo, closeModal}) => {
             created: docInfo.created,
             modified: fecha,
             creator: docInfo.creator,
-            modifier: userEmail,
+            modifier: userRealName,
         });
         setEdited(true)
     }

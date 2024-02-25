@@ -4,7 +4,7 @@ import { AddModal } from "../components/AddModal";
 import { DeleteModal } from "../components/DeleteModal";
 import { ViewModal } from "../components/ViewModal"; 
 import { EditModal } from "../components/EditModal"; 
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import searchLogo from '../img/icons/search.png';
 import deleteLogo from '../img/icons/borrar.png';
 import editLogo from '../img/icons/editar.png';
@@ -12,10 +12,14 @@ import viewLogo from '../img/icons/vision.png';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase"; 
 import { Capitalize } from "../functions/NormalizeInfo";
+import { loggedUserContext } from "../context/loggedUserContext";
+import { useNavigate } from "react-router-dom";
 
 
 const Manage = () => {
 
+    const navigate = useNavigate()
+    const {logged, setLogged} = useContext(loggedUserContext)
     const [selectedDoc, setSelectedDoc] = useState()
     const [docInfo, setDocInfo] = useState()
     let oneDoc = []
@@ -24,6 +28,12 @@ const Manage = () => {
     const [viewModal, setViewModal] = useState(false)
     const [editModal, setEditModal] = useState(false)
     const [obtainedDocs, setObtainedDocs] = useState([])
+
+    useEffect( () => {
+        if(logged == false){
+            navigate('/home')
+        }
+    } )
 
     function handleAddModal(){
         setAddModal(!addModal)
@@ -63,6 +73,11 @@ const Manage = () => {
         setObtainedDocs(oneDoc)
     }
 
+    function handleLogOut(){
+        setLogged(false)
+        navigate('/home')
+    }
+
     return(
         <div className="Manage">
             <div className="searchBar">
@@ -74,6 +89,7 @@ const Manage = () => {
                 </form>
                 <Button label='Mostrar todo' variant='action' onClick={ () => showAll()}></Button>
                 <Button label='Agregar' variant='action' onClick={ () => handleAddModal()}></Button>
+                <Button label='Salir' variant='deny' onClick={ () => handleLogOut() }></Button>
             </div>
 
             <div className="resultBox">
