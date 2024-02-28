@@ -73,8 +73,8 @@ const Admin = () => {
                                         <TextField
                                             label='Contraseña'
                                             type='password'
-                                            pattern="[a-z, A-Z, 0-9] {8,20}"
-                                            title='La contraseña debe contener de 8 a 20 caracteres, numeros y letras mayusculas y minusculas'
+                                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*]).{8,20}$"
+                                            title='La contraseña debe contener de 8 a 20 caracteres, numeros y letras mayusculas y minusculas ademas de uno de los caracteres: !, @, #, $, %*'
                                         ></TextField>
                                         <label htmlFor='chkadm'><input id='chkadm' type="checkbox"/>Administrador</label>
                                         <Button label='Registrar' type='submit' variant='allow'></Button>
