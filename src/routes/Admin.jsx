@@ -7,6 +7,8 @@ import { Auth } from '../../firebase';
 import { getUserInfo, saveUserInfo } from "../functions/firebaseQuerys";
 import { useNavigate } from "react-router-dom";
 import searchLogo from '../img/icons/search.png'
+import { CheckBox } from "../components/CheckBox/CheckBox"; 
+import { hash } from "../functions/encrypt";
 
 const Admin = () => {
 
@@ -18,7 +20,7 @@ const Admin = () => {
     async function handleLogin(e){
         e.preventDefault()
         const userEmail = e.target[0].value;
-        const userPassword = e.target[1].value;
+        const userPassword = await hash(e.target[1].value);
         signInWithEmailAndPassword(Auth, userEmail, userPassword)
         .then(async (userCredential) => {
             const user = userCredential.user;
@@ -35,7 +37,7 @@ const Admin = () => {
         e.preventDefault()
         const newUserEmail = e.target[0].value
         const newUserName = e.target[1].value
-        const newUserPassword = e.target[2].value
+        const newUserPassword = await hash(e.target[2].value)
         const newUserAdmin = e.target[3].checked
         createUserWithEmailAndPassword(Auth, newUserEmail, newUserPassword)
         .then((userCredential) => {
@@ -43,6 +45,7 @@ const Admin = () => {
             saveUserInfo(user.uid, newUserAdmin, newUserName)
             setCreateSuccess(true)
         })
+        console.log(newUserPassword)
     }
 
     function handleLogOut(){
@@ -76,7 +79,8 @@ const Admin = () => {
                                             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*]).{8,20}$"
                                             title='La contraseña debe contener de 8 a 20 caracteres, numeros y letras mayusculas y minusculas ademas de uno de los caracteres: !, @, #, $, %*'
                                         ></TextField>
-                                        <label htmlFor='chkadm'><input id='chkadm' type="checkbox"/>Administrador</label>
+                                        {/* <label htmlFor='chkadm'><input id='chkadm' type="checkbox"/>Administrador</label> */}
+                                        <CheckBox label='Admin'></CheckBox>
                                         <Button label='Registrar' type='submit' variant='allow'></Button>
                                     </form>
                                 </div> }

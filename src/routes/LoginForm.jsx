@@ -6,6 +6,7 @@ import { Auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import { loggedUserContext } from '../context/loggedUserContext';
 import { getUserInfo } from '../functions/firebaseQuerys';
+import { hash } from '../functions/encrypt';
 
 const LoginForm = () => {
 
@@ -21,7 +22,7 @@ const LoginForm = () => {
     async function handleSubmit(e){
         e.preventDefault()
         const userEmail = e.target[0].value;
-        const userPassword = e.target[1].value;
+        const userPassword = await hash(e.target[1].value);
 
         signInWithEmailAndPassword(Auth, userEmail, userPassword)
         .then(async (userCredential) => {
