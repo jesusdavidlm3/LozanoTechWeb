@@ -4,11 +4,20 @@ import imgRef1 from '/src/img/ref1.png'
 import imgRef2 from '/src/img/ref2.png'
 import imgRef3 from '/src/img/ref3.jpg'
 import { Link } from 'react-router-dom'
+import Atropos from 'atropos/react'
 
 export const StartPage = () => {
+
+    const resume = Atropos({
+        el: '.resume',
+        shadow: false
+    })
+
     return(
         <div className="startPage">
-            <img className="welcomeLogo" src={isoTipoBlue}/>
+            <Atropos shadow={false} duration={50}>
+                <img className="welcomeLogo" src={isoTipoBlue}/>
+            </Atropos>
             <h1>Hola!</h1>
             <p>
                 Somos un proyecto pequeño dedicado a llevar a cabo reparaciones
@@ -40,6 +49,7 @@ export const StartPage = () => {
                 </div>
                 <img src={imgRef2}/>
             </div>
+            
 
             <div className="StartInfoContainer">
                 <img className="roundImage" src={imgRef3}/>
