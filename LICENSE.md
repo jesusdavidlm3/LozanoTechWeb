@@ -1,0 +1,5 @@
+ALL RIGHTS RESERVED
+© 2024 Jesus David Lozano. 
+
+TODOS LOS DERECHOS RESERVADOS
+© 2024 Jesus David Lozano. 
