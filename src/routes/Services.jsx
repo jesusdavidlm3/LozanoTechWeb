@@ -21,82 +21,62 @@ export const Services = () => {
             </p>
             
             <div className="servicesContainer">
-                <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
+                <Atropos  shadow={false} duration={50}>
                         <img src={s1}/>
-                        <p>Paginas web</p>
-                    </div>
                 </Atropos>
                 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s2}/>
-                        <p>Redes WiFi</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s3}/>
-                        <p>Soporte remoto</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s4}/>
-                        <p>Limpieza antivirus</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s5}/>
-                        <p>Software apple</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s6}/>
-                        <p>Reparacion de USBs</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s7}/>
-                        <p>Programas</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s8}/>
-                        <p>Optimizacion</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s9}/>
-                        <p>Manteniminto</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s10}/>
-                        <p>Actualizaciones</p>
-                    </div>
                 </Atropos>
 
                 <Atropos shadow={false} duration={50}>
-                    <div className="individualService">
                         <img src={s11}/>
-                        <p>Software</p>
-                    </div>
                 </Atropos>
+            </div>
+            <div className="servicesContainerPhone">
+                <img src={s1}/>
+                <img src={s2}/>
+                <img src={s3}/>
+                <img src={s4}/>
+                <img src={s5}/>
+                <img src={s6}/>
+                <img src={s7}/>
+                <img src={s8}/>
+                <img src={s9}/>
+                <img src={s10}/>
+                <img src={s11}/>
             </div>
             <Footer/>
         </div>

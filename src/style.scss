@@ -1,8 +1,32 @@
 @import 'atropos/scss';
 
+@mixin checkContainer{
+    width: 50vw;
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+@mixin servicesContainer{
+    margin-top: 20px;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img{
+        width: 350px;
+        border-radius: 30px;
+        margin: 15px;
+    }
+}
+
 @mixin Footer{
     margin-top: 20px;
-    height: calc(230px - 40px);
+    // height: calc;
     padding: 20px;
     width: calc(100vw - 40px);
     background-image: url(./img/BackGround.jpg);
@@ -14,12 +38,22 @@
     .contact{
         display: flex;
         flex-direction: column;
+
+        h1{
+            text-align: start;
+            margin: 0px;
+            padding: 0px;
+        }
     }   
 
     .atribs{
         display: flex;
         flex-direction: column;
         text-align: end;
+
+        h1{
+            text-align: end;
+        }
     }
     h1, a, p{
         color: white;
@@ -34,6 +68,9 @@
         color: white;
     }
 
+    @media (orientation: portrait){
+        display: none;
+    }
 }
 
 body{
@@ -149,6 +186,7 @@ body{
         align-items: center;
         justify-content: start;
         overflow-y: scroll;
+        overflow-x: hidden;
 
         .welcomeLogo{
             width: 250px;
@@ -304,7 +342,10 @@ body{
         }
 
         .Footer{
-            @include Footer()
+            @include Footer();
+            h1{
+                margin: 0px
+            }
         }
     }
 
@@ -380,13 +421,7 @@ body{
         }
 
         .checkContainer1{
-            width: 50vw;
-            height: calc(100vh - 90px);
-            // background-color: brown;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            @include checkContainer();
 
             @media(orientation: portrait){
                 height: 30vh;
@@ -401,12 +436,7 @@ body{
         }
 
         .checkContainer2{
-            width: 50vw;
-            height: calc(100vh - 90px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            @include checkContainer();
 
             @media(orientation: portrait){
                 height: 50vh;
@@ -483,46 +513,29 @@ body{
         }
 
         .servicesContainer{
-            margin-top: 20px;
-            width: 85vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            .individualService{
-                width: 350px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                @media(orientation: portrait){
-                    width: 100vw;
-                }
-
-                img{
-                    width: 300px;
-                    border-radius: 30px;
-                    // box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3);
-                    transition: all ease .3s;
-
-                    @media(orientation: portrait){
-                        width: 75vw;
-                    }
-
-                    // &:hover{
-                    //     @media(orientation: landscape){
-                    //         transform: scale(1.2);
-                    //         box-shadow: 0px 0px 10px 10px rgba(0, 230, 230, 0.7);
-                    //     }
-                    // }
-                }
+            @include servicesContainer();
+            @media (orientation: portrait) {
+                display: none;
             }
         }
 
+        .servicesContainerPhone{
+            @include servicesContainer();
+            display: none;
+            width: 100vw;
+            padding-left: 3%;
+            margin-bottom: 20vh;
+
+            img{ width: 90vw;}
+            @media (orientation: portrait){
+                display: block;
+            }
+        }
+        
         .Footer{
-            @include Footer()
+            @include Footer();
+            padding-top: 0px;
+            padding-bottom: 80px;
         }
     }
 
