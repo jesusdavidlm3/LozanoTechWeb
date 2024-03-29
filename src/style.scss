@@ -1,5 +1,41 @@
 @import 'atropos/scss';
 
+@mixin Footer{
+    margin-top: 20px;
+    height: calc(230px - 40px);
+    padding: 20px;
+    width: calc(100vw - 40px);
+    background-image: url(./img/BackGround.jpg);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .contact{
+        display: flex;
+        flex-direction: column;
+    }   
+
+    .atribs{
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+    }
+    h1, a, p{
+        color: white;
+        text-decoration: none;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+    h3{
+        margin: 0px;
+        color: white;
+    }
+
+}
+
 body{
     height: 100vh;
     margin: 0;
@@ -106,7 +142,7 @@ body{
 
     .startPage{
         width: 100vw;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 130px);
         padding-top: 50px;
         display: flex;
         flex-direction: column;
@@ -205,7 +241,7 @@ body{
                 p{
                     width: 50vw;
                     text-align: end;
-                    
+
                     @media(orientation: portrait){
                         width: 90vw;
                         text-align: center;
@@ -265,6 +301,10 @@ body{
             @media(orientation: portrait){
                 flex-direction: column-reverse;
             }
+        }
+
+        .Footer{
+            @include Footer()
         }
     }
 
@@ -480,6 +520,10 @@ body{
                 }
             }
         }
+
+        .Footer{
+            @include Footer()
+        }
     }
 
     .aboutUs{
@@ -524,7 +568,7 @@ body{
 .Manage{
     width: 100vw;
     height: 100vh;
-    
+
     .searchBar{
         width: calc(100vw - 40px);
         height: 80px;

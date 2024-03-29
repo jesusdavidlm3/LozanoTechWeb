@@ -10,6 +10,7 @@ import s9 from '/src/img/services/s9.jpg'
 import s10 from '/src/img/services/s10.avif'
 import s11 from '/src/img/services/s11.avif'
 import Atropos from 'atropos/react'
+import Footer from '../components/Footer'
 
 export const Services = () => {
     return(
@@ -97,6 +98,7 @@ export const Services = () => {
                     </div>
                 </Atropos>
             </div>
+            <Footer/>
         </div>
     )
 }

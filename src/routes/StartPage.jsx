@@ -1,5 +1,5 @@
-import NavBar from '../components/NavBar'
 import isoTipoBlue from '/src/img/LozanoTechIsotipoBlue.png'
+import Footer from '../components/Footer'
 import imgRef1 from '/src/img/ref1.png'
 import imgRef2 from '/src/img/ref2.png'
 import imgRef3 from '/src/img/ref3.jpg'
@@ -7,11 +7,6 @@ import { Link } from 'react-router-dom'
 import Atropos from 'atropos/react'
 
 export const StartPage = () => {
-
-    const resume = Atropos({
-        el: '.resume',
-        shadow: false
-    })
 
     return(
         <div className="startPage">
@@ -62,6 +57,7 @@ export const StartPage = () => {
                     </p>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
