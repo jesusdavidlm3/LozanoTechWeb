@@ -8,14 +8,12 @@ import { AboutUs } from './routes/AboutUs.jsx'
 import { Root } from './routes/Root.jsx'
 import Manage from './routes/Manage.jsx'
 import ReactDOM from 'react-dom/client'
-import NavBar from './components/NavBar.jsx'
 import ErrorPage from './routes/ErrorPage.jsx'
 import './style.scss'
-import { createBrowserRouter, RouterProvider, BrowserRouter } from "react-router-dom"
+import { createBrowserRouter, RouterProvider, } from "react-router-dom"
 import LoggedUserProvider from './context/LoggedUserProvider.jsx'
 import Admin from './routes/Admin.jsx'
-import RegisterUser from './routes/RegisterUser.jsx'
-import AdminUsers from './routes/AdminUsers.jsx'
+import Contact from './routes/Contact.jsx'
 
 const router = createBrowserRouter([
   {
@@ -55,6 +53,10 @@ const router = createBrowserRouter([
         path: '/Admin',
         element: <Admin />,
       },
+      {
+        path: '/contact',
+        element: <Contact />
+      }
     ]
   }
 ])

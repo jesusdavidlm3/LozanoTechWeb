@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import imgRef1 from '/src/img/ref1.png'
 import imgRef2 from '/src/img/ref2.png'
 import imgRef3 from '/src/img/ref3.jpg'
+import imgRef4 from '/src/img/ref4.jpg'
 import { Link } from 'react-router-dom'
 import Atropos from 'atropos/react'
 
@@ -17,8 +18,22 @@ export const StartPage = () => {
             <p>
                 Somos un proyecto pequeño dedicado a llevar a cabo reparaciones
                 accesibles y de calidad en equipos de escritorio y laptops para
-                hogares, pequeñas empresas y estudiantes.
+                hogares, pequeñas empresas y estudiantes ademas de desarrollar
+                herramientas y paginas web adaptadas a tus necesidades.
             </p>
+
+            <div className="StartInfoContainer reverse">
+                <div className="right">
+                    <h1>Herramientas de calidad</h1>
+                    <p>
+                        Porque un trabajo bien hecho se hace bien tanto por dentro como
+                        por fuera. Nos enfocamos en que las herramientas y webs que
+                        que desarrollamos cumplan con todas tus expectativas mientras
+                        prestamos especial atencion en el apartado estetico.
+                    </p>
+                </div>
+                <img className="roundImage" src={imgRef4}/>
+            </div>
 
             <div className="StartInfoContainer">
                 <img className="roundImage" src={imgRef1}/>

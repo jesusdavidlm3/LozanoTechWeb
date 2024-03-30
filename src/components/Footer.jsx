@@ -16,6 +16,8 @@ const Footer = () => {
         <a href="https://www.flaticon.es/iconos-gratis/desinstalar" title="desinstalar iconos">Desinstalar iconos creados por Bharat Icons - Flaticon</a>
         <a href="https://www.flaticon.es/iconos-gratis/buscar" title="buscar iconos">Buscar iconos creados por Freepik - Flaticon</a>
         <a href="https://www.flaticon.es/iconos-gratis/desinstalar" title="desinstalar iconos">Desinstalar iconos creados por Bharat Icons - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/nuevo-email" title="nuevo email iconos">Nuevo email iconos creados por Freepik - Flaticon</a>
+        <a href="https://www.flaticon.es/iconos-gratis/telefono" title="teléfono iconos">Teléfono iconos creados por Freepik - Flaticon</a>
       </div>
     </div>
   )

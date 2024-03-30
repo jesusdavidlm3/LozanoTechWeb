@@ -17,6 +17,7 @@ const NavBar = () => {
                     <img className="burguerMenuIcon" src={menuIcon} onClick={ () => {setDisplayMenu(!displayMenu)}}/>
                     <Link className='link' to={'/home'}> <h3>Inicio</h3> </Link>
                     <Link className='link' to={'services'}> <h3>Servicios</h3> </Link>
+                    <Link className='link' to={'contact'}> <h3>Contacto</h3> </Link>
                     <Link className='link' to={'comments'}> <h3>Comentarios</h3> </Link>
                     <Link className='link' to={'aboutUs'}> <h3>Sobre nosotros</h3> </Link>
                 </div> 
